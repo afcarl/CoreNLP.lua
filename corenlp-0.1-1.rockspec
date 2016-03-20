@@ -13,13 +13,13 @@ description = {
    license = "MIT"
 }
 dependencies = {
-   "lua ~> 5.1",
+   "lua",
    "class",
 }
 build = {
   type = 'builtin',
   modules = {
-    corenlp = "CoreNLP.lua",
-    ['corenlp.sh'] = 'sh.lua',
+    corenlp = "src/corenlp.lua",
+    ['corenlp.sh'] = 'src/sh.lua',
   }
 }
