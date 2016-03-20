@@ -3,7 +3,7 @@ local json = require 'cjson'
 local sh = require 'corenlp.sh'
 local class = require 'class'
 
-local CoreNLP = class('CoreNLP')
+local Client = class('corenlp.Client')
 
 --[[ Constructor.
 `url` is the url at which the CoreNLP server listens. Make sure your CoreNLP server is running:
@@ -12,12 +12,12 @@ local CoreNLP = class('CoreNLP')
 java -mx4g -cp "*" edu.stanford.nlp.pipeline.StanfordCoreNLPServer
 ```
 ]]
-function CoreNLP:__init(url)
+function Client:__init(url)
   url = url or 'http://localhost:9000'
   self.url = url
 end
 
-function CoreNLP:parse_opt(opt)
+function Client:parse_opt(opt)
   local s = ''
   for k, v in pairs(opt) do
     s = s .. '"' .. k .. '"' .. ': ' .. '"' .. tostring(v) .. '", '
@@ -25,7 +25,7 @@ function CoreNLP:parse_opt(opt)
   return s
 end
 
-function CoreNLP:parse(raw, opt)
+function Client:parse(raw, opt)
   opt = opt or {annotators = "tokenize,ssplit"}
   local query = [[-q --post-data ']] .. raw .. [[' ']]
   query = query .. self.url .. [[/?properties={]] .. self:parse_opt(opt) .. [["outputFormat": "json"}' -O -]]
@@ -36,4 +36,4 @@ function CoreNLP:parse(raw, opt)
   return json.decode(tostring(result))
 end
 
-return CoreNLP
+return Client
