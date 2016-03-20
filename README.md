@@ -1,6 +1,13 @@
 # CoreNLP.lua
 Lua client for Stanford CoreNLP
 
+## Installation
+
+```bash
+git clone https://github.com/vzhong/CoreNLP.lua.git
+cd CoreNLP.lua && luarocks make
+```
+
 ## Usage
 
 First, start the [CoreNLP server](http://stanfordnlp.github.io/CoreNLP/):
