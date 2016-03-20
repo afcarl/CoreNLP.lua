@@ -2,7 +2,7 @@ package = "corenlp"
 version = "0.1-1"
 source = {
    url = "https://github.com/vzhong/corenlp.lua",
-   tag = 'v0.1'
+   tag = '0.1'
 }
 description = {
    summary = "Stanford CoreNLP client in Lua.",
