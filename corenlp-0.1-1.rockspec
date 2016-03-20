@@ -10,10 +10,10 @@ description = {
       An implementation of the CoreNLP client in Lua.
    ]],
    homepage = "https://github.com/vzhong/corenlp.lua",
-   license = "MIT"
+   license = "MIT",
+   maintainer = "victor@victorzhong.com"
 }
 dependencies = {
-   "lua",
    "class",
 }
 build = {
