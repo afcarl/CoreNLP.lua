@@ -1,5 +1,5 @@
 # CoreNLP.lua
-Lua client for Stanford CoreNLP
+Lua client for [Stanford CoreNLP](http://nlp.stanford.edu/software/).
 
 ## Installation
 
