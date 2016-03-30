@@ -29,7 +29,8 @@ end
 
 function M.Client:parse(raw, opt)
   opt = opt or {annotators = "tokenize,ssplit"}
-  local query = [[-q --post-data ']] .. raw .. [[' ']]
+  raw = string.gsub(raw, '"', '\\"')  -- escape quotes
+  local query = [[-q --post-data "]] .. raw .. [[" ']]
   query = query .. self.url .. [[/?properties={]] .. self:parse_opt(opt) .. [["outputFormat": "json"}' -O -]]
   if opt.verbose then
     print('wget '..query)
