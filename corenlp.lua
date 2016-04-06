@@ -29,6 +29,8 @@ end
 
 function M.Client:parse(raw, opt)
   opt = opt or {annotators = "tokenize,ssplit"}
+  raw = string.gsub(raw, '\\', '')  -- escape backslash
+  raw = string.gsub(raw, '`', "'")  -- escape backticks
   raw = string.gsub(raw, '"', '\\"')  -- escape quotes
   local query = [[-q --post-data "]] .. raw .. [[" ']]
   query = query .. self.url .. [[/?properties={]] .. self:parse_opt(opt) .. [["outputFormat": "json"}' -O -]]
