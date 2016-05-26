@@ -24,7 +24,11 @@ local corenlp = require 'corenlp'
 local c = corenlp.Client()  -- you can optionally give the url to the CoreNLP server.
 
 -- the first argument is the document, the second argument is the properties field described here: http://stanfordnlp.github.io/CoreNLP/corenlp-server.html
-local got = c:parse('the quick brown fox jumped over the lazy dog', {["tokenize.whitespace"] = true, annotators = "tokenize,ssplit,ner"})
+local got = c:annotate('the quick brown fox jumped over the lazy dog', {["tokenize.whitespace"] = true, annotators = "tokenize,ssplit,ner"})
 
 print(got)
 ```
+
+## Documentation
+
+Documentation is generated via [docroc](//www.victorzhong.com/docroc) and can be found [here](//www.victorzhong.com/corenlp.lua)

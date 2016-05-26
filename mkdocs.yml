@@ -1,0 +1,8 @@
+repo_url: https://github.com/vzhong/corenlp.lua
+copyright: Copyright 2016 Victor Zhong (victor@victorzhong.com)
+site_description: Documentation for CoreNLP.lua
+site_author: Victor Zhong (victor@victorzhong.com)
+site_name: corenlp.lua
+pages:
+- 'Home': 'index.md'
+- 'corenlp': 'corenlp.md'

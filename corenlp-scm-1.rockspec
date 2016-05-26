@@ -15,13 +15,12 @@ description = {
 }
 
 dependencies = {
-  "class"
+  "dkjson"
 }
 
 build = {
   type = "builtin",
   modules = {
-    corenlp = 'corenlp.lua',
-    ['corenlp.sh'] = 'sh.lua',
+    corenlp = 'src/corenlp.lua',
   }
 }
