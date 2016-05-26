@@ -1,4 +1,7 @@
 # CoreNLP.lua
+
+[![wercker status](https://app.wercker.com/status/b45452b05cfd3aa069569acd38015bda/s/master "wercker status")](https://app.wercker.com/project/bykey/b45452b05cfd3aa069569acd38015bda)
+
 Lua client for [Stanford CoreNLP](http://nlp.stanford.edu/software/).
 
 ## Installation
@@ -32,3 +35,18 @@ print(got)
 ## Documentation
 
 Documentation is generated via [docroc](//www.victorzhong.com/docroc) and can be found [here](//www.victorzhong.com/corenlp.lua)
+
+
+## FAQ
+
+### My document fails to annotate
+
+If this happens on the Lua end and not on the Java end, please find an issue because this is likely a bug.
+
+If this happens on the Java end (eg. you see an exception in the Java server), this is most likely because your document's encoding is not acceptable.
+
+One way to handle this problem is to escape non-UTF8 characters in the document. You can do this via [Lua UTF-8](//github.com/starwing/luautf8), namely via
+
+```lua
+text = utf8.escape(text)
+```

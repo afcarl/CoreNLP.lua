@@ -24,16 +24,11 @@ build:
       name: install dependencies
       code: |
         apt-get -yqq update
-        apt-get install -yqq python python-pip
-        pip install mkdocs
+        apt-get install -yqq git
     - script:
       name: install module
       code: |
         luarocks make
-    - script:
-      name: integration test
-      code: |
-        lua example.lua
     - script:
       name: generate markdown
       code: |
@@ -47,7 +42,6 @@ deploy:
       code: |
         apt-get -yqq update
         apt-get install -yqq python python-pip
-        apt-get install -yqq git
         pip install mkdocs
     - script:
       name: build docs

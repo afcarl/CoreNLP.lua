@@ -42,7 +42,7 @@ function Client:annotate(doc, properties)
   --local addr = self.url .. '/?properties=' .. url.escape(json.encode(properties))
   local addr = self.server_url .. '/?properties=' .. url.escape(json.encode(properties))
   local request, response = doc, {}
-  local _, respcode = http.request {
+  local ret, respcode = http.request {
     method = "POST",
     url = addr,
     source = ltn12.source.string(request),
@@ -52,7 +52,8 @@ function Client:annotate(doc, properties)
     },
     sink = ltn12.sink.table(response)
   }
-  assert(respcode == 200, 'Request to '..addr.. ' failed for document:\n' .. doc)
+  assert(respcode == 200, 'Request to '..addr.. ' failed for document:\n' .. ret .. '\n' .. doc .. '\n\nCheck your sever log for errors.')
+
   return json.decode(table.concat(response))
 end
 
