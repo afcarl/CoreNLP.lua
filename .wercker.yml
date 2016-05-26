@@ -41,7 +41,7 @@ deploy:
       name: install dependencies
       code: |
         apt-get -yqq update
-        apt-get install -yqq python python-pip
+        apt-get install -yqq python python-pip git
         pip install mkdocs
     - script:
       name: build docs
