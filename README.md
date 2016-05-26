@@ -41,7 +41,7 @@ Documentation is generated via [docroc](http://www.victorzhong.com/docroc) and c
 
 ### My document fails to annotate
 
-If this happens on the Lua end and not on the Java end, please find an issue because this is likely a bug.
+If this happens on the Lua end and not on the Java end, please file an issue because this is likely a bug.
 
 If this happens on the Java end (eg. you see an exception in the Java server), this is most likely because your document's encoding is not acceptable.
 
@@ -50,3 +50,8 @@ One way to handle this problem is to escape non-UTF8 characters in the document.
 ```lua
 text = utf8.escape(text)
 ```
+
+
+## Contribution
+
+Pull requests are welcome!
