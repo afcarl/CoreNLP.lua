@@ -31,10 +31,6 @@ build:
       code: |
         luarocks make
     - script:
-      name: integration test
-      code: |
-        lua example.lua
-    - script:
       name: generate markdown
       code: |
         git clone https://github.com/vzhong/docroc.git
