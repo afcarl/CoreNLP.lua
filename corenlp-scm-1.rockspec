@@ -15,7 +15,8 @@ description = {
 }
 
 dependencies = {
-  "dkjson"
+  "dkjson",
+  "luasocket",
 }
 
 build = {

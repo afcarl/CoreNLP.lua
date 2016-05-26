@@ -1,4 +1,7 @@
 # CoreNLP.lua
+
+[![wercker status](https://app.wercker.com/status/b45452b05cfd3aa069569acd38015bda/s/master "wercker status")](https://app.wercker.com/project/bykey/b45452b05cfd3aa069569acd38015bda)
+
 Lua client for [Stanford CoreNLP](http://nlp.stanford.edu/software/).
 
 ## Installation
