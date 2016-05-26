@@ -34,7 +34,7 @@ print(got)
 
 ## Documentation
 
-Documentation is generated via [docroc](//www.victorzhong.com/docroc) and can be found [here](//www.victorzhong.com/corenlp.lua)
+Documentation is generated via [docroc](http://www.victorzhong.com/docroc) and can be found [here](http://www.victorzhong.com/corenlp.lua)
 
 
 ## FAQ
