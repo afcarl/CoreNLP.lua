@@ -1,3 +1,4 @@
+#!/usr/bin/env lua
 local corenlp = require 'corenlp'
 
 local sent = 'For Human Rights in United e2SymStart  Latvia e2SymEnd  did not nominate a candidate &#44; it was announced after election that e1SymStart  they e1SymEnd  supported Endziņ&scaron; .'
