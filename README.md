@@ -24,11 +24,13 @@ Next, you can use the Lua client in your program:
 ```lua
 local corenlp = require 'corenlp'
 
-local c = corenlp.Client()  -- you can optionally give the url to the CoreNLP server.
+-- you can optionally give the url to the CoreNLP server.
+local c = corenlp.Client()
 
 -- the first argument is the document, the second argument is the properties field described here: http://stanfordnlp.github.io/CoreNLP/corenlp-server.html
 local got = c:annotate('the quick brown fox jumped over the lazy dog', {["tokenize.whitespace"] = true, annotators = "tokenize,ssplit,ner"})
 
+-- you'll need prettyprint to see the table content printed.
 print(got)
 ```
 
@@ -43,7 +45,7 @@ Documentation is generated via [docroc](http://www.victorzhong.com/docroc) and c
 
 If this happens on the Lua end and not on the Java end, please file an issue because this is likely a bug.
 
-If this happens on the Java end (eg. you see an exception in the Java server), this is most likely because your document's encoding is not acceptable.
+If this happens on the Java end (eg. you see an exception in the Java server), this is most likely because your document's encoding is not supported by CoreNLP.
 
 One way to handle this problem is to escape non-UTF8 characters in the document. You can do this via [Lua UTF-8](//github.com/starwing/luautf8), namely via
 
