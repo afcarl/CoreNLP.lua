@@ -1,0 +1,64 @@
+{
+    "docs": [
+        {
+            "location": "/", 
+            "text": "CoreNLP.lua\n\n\n\n\nLua client for \nStanford CoreNLP\n.\n\n\nInstallation\n\n\ngit clone https://github.com/vzhong/CoreNLP.lua.git\ncd CoreNLP.lua \n luarocks make\n\n\n\n\nUsage\n\n\nFirst, start the \nCoreNLP server\n:\n\n\njava -mx4g -cp \n*\n edu.stanford.nlp.pipeline.StanfordCoreNLPServer\n\n\n\n\nNext, you can use the Lua client in your program:\n\n\nlocal corenlp = require 'corenlp'\n\n-- you can optionally give the url to the CoreNLP server.\nlocal c = corenlp.Client()\n\n-- the first argument is the document, the second argument is the properties field described here: http://stanfordnlp.github.io/CoreNLP/corenlp-server.html\nlocal got = c:annotate('the quick brown fox jumped over the lazy dog', {[\ntokenize.whitespace\n] = true, annotators = \ntokenize,ssplit,ner\n})\n\n-- you'll need prettyprint to see the table content printed.\nprint(got)\n\n\n\n\nDocumentation\n\n\nDocumentation is generated via \ndocroc\n and can be found \nhere\n\n\nFAQ\n\n\nMy document fails to annotate\n\n\nIf this happens on the Lua end and not on the Java end, please file an issue because this is likely a bug.\n\n\nIf this happens on the Java end (eg. you see an exception in the Java server), this is most likely because your document's encoding is not supported by CoreNLP.\n\n\nOne way to handle this problem is to escape non-UTF8 characters in the document. You can do this via \nLua UTF-8\n, namely via\n\n\ntext = utf8.escape(text)\n\n\n\n\nContribution\n\n\nPull requests are welcome!", 
+            "title": "Home"
+        }, 
+        {
+            "location": "/#corenlplua", 
+            "text": "Lua client for  Stanford CoreNLP .", 
+            "title": "CoreNLP.lua"
+        }, 
+        {
+            "location": "/#installation", 
+            "text": "git clone https://github.com/vzhong/CoreNLP.lua.git\ncd CoreNLP.lua   luarocks make", 
+            "title": "Installation"
+        }, 
+        {
+            "location": "/#usage", 
+            "text": "First, start the  CoreNLP server :  java -mx4g -cp  *  edu.stanford.nlp.pipeline.StanfordCoreNLPServer  Next, you can use the Lua client in your program:  local corenlp = require 'corenlp'\n\n-- you can optionally give the url to the CoreNLP server.\nlocal c = corenlp.Client()\n\n-- the first argument is the document, the second argument is the properties field described here: http://stanfordnlp.github.io/CoreNLP/corenlp-server.html\nlocal got = c:annotate('the quick brown fox jumped over the lazy dog', {[ tokenize.whitespace ] = true, annotators =  tokenize,ssplit,ner })\n\n-- you'll need prettyprint to see the table content printed.\nprint(got)", 
+            "title": "Usage"
+        }, 
+        {
+            "location": "/#documentation", 
+            "text": "Documentation is generated via  docroc  and can be found  here", 
+            "title": "Documentation"
+        }, 
+        {
+            "location": "/#faq", 
+            "text": "", 
+            "title": "FAQ"
+        }, 
+        {
+            "location": "/#my-document-fails-to-annotate", 
+            "text": "If this happens on the Lua end and not on the Java end, please file an issue because this is likely a bug.  If this happens on the Java end (eg. you see an exception in the Java server), this is most likely because your document's encoding is not supported by CoreNLP.  One way to handle this problem is to escape non-UTF8 characters in the document. You can do this via  Lua UTF-8 , namely via  text = utf8.escape(text)", 
+            "title": "My document fails to annotate"
+        }, 
+        {
+            "location": "/#contribution", 
+            "text": "Pull requests are welcome!", 
+            "title": "Contribution"
+        }, 
+        {
+            "location": "/corenlp/", 
+            "text": "Client\n\n\nLua implementation of CoreNLP client.\n\n\nClient.new(server_url)\n\n\nView source\n\n\nConstructor.\n\n\nArguments:\n\n\n\n\nserver_url\n (\nstring\n): url at which the CoreNLP server listens. Make sure your CoreNLP server is running:. Optional, Default: \n'http://localhost:9000\n.\n\n\n\n\njava -mx4g -cp \n*\n edu.stanford.nlp.pipeline.StanfordCoreNLPServer\n\n\n\n\nClient:annotate(doc, properties)\n\n\nView source\n\n\nAnnotates a document.\n\n\nArguments:\n\n\n\n\ndoc\n (\nstring\n): document to annotate.\n\n\nproperties\n (\ntable\n): properties field for CoreNLP server. Optional.\n\n\n\n\nBy default, the properties field has\n\n\n{annotators = 'tokenize,ssplit'}\n\n\n\n\nFor a list of available fields, check out the \nStanford CoreNLP docs\n.", 
+            "title": "corenlp"
+        }, 
+        {
+            "location": "/corenlp/#client", 
+            "text": "Lua implementation of CoreNLP client.", 
+            "title": "Client"
+        }, 
+        {
+            "location": "/corenlp/#clientnewserver95url", 
+            "text": "View source  Constructor.  Arguments:   server_url  ( string ): url at which the CoreNLP server listens. Make sure your CoreNLP server is running:. Optional, Default:  'http://localhost:9000 .   java -mx4g -cp  *  edu.stanford.nlp.pipeline.StanfordCoreNLPServer", 
+            "title": "Client.new(server_url)"
+        }, 
+        {
+            "location": "/corenlp/#clientannotatedoc-properties", 
+            "text": "View source  Annotates a document.  Arguments:   doc  ( string ): document to annotate.  properties  ( table ): properties field for CoreNLP server. Optional.   By default, the properties field has  {annotators = 'tokenize,ssplit'}  For a list of available fields, check out the  Stanford CoreNLP docs .", 
+            "title": "Client:annotate(doc, properties)"
+        }
+    ]
+}
